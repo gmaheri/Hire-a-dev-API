@@ -9,7 +9,7 @@ const DevSchema = new Schema({
   },
 
   level : {
-    type : string
+    type : String
   },
 
   available : {
@@ -21,6 +21,6 @@ const DevSchema = new Schema({
 });
 
 //Create model
-const Dev = mongoose.model('dev', DevSchema);
+const Devk = mongoose.model('devs', DevSchema);
 
-module.exports = Dev;
+module.exports = Devk;
