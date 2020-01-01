@@ -4,7 +4,15 @@ const Devk = require('../models/devs')
 
 //get a list of devs from the database
 router.get('/dev', (req, res, next) => {
-  res.send({type: 'GET'});
+  /*Devk.find({}).then((person) => {
+    res.send(person)
+  })*/
+  Devk.geoNear(
+    {type : 'Point', coordinate : [parseFloat(req.query.lng), parseFloat(req.query.lat)]},
+   {maxDistance : 100000, sperical: true}
+    ).then((person) => {
+      res.send(perrson)
+    });
 });
 
 //add a dev to the database
